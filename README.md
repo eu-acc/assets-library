@@ -1,5 +1,6 @@
 # EUAccAssets
 Library of Digital Assets for EU/Acc
+The Logo font is Neue Haas Grotesque - Bold
 
 ## Vector Logo
 |Location|Description|Filename|
