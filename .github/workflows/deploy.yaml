@@ -3,16 +3,43 @@ name: Build and Publish storybook to GitHub Pages
 on:
   push:
     branches:
-      - "main"
+      - "gh-pages"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+
+    - name: Build
+      run: |
+        npm ci
+        npm run build-storybook
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2.0.0
+      with:
+        path: storybook-static
+
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: build
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-      with:
-        path: dist/storybook
-        build_command: npm run build-storybook
+      - name: Deploy to GH Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
+        with:
+          token: ${{ github.token }}
