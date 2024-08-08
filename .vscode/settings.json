@@ -1,0 +1,20 @@
+{
+  "editor.fontSize": 10,
+  "editor.fontFamily": "Andale Mono, Monaco, 'Courier New', monospace",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "html.format.indentInnerHtml": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "editor.fontWeight": "bold",
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "[mdx]": {
+    "editor.formatOnSave": false
+  },
+  "markdown.preview.fontSize": 10,
+  "cSpell.words": ["colours", "colour"]
+}
