@@ -8,7 +8,7 @@ export default create({
   //   fontCode: "monospace",
 
   // Brand
-  brandTitle: "EU/Acc",
+  brandTitle: "Eu/Acc Asset Library",
   brandUrl: "https://eu-acc.com/",
   brandImage: "logo/long/svg/eu-acc-logo-long-light.svg",
   brandTarget: "_self",
