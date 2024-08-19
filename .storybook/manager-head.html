@@ -1,0 +1,11 @@
+<script>
+  var observer = new MutationObserver(function(mutations) {
+    if (document.title.includes("Storybook")) {
+      document.title = document.title.replace(/Storybook/g, "Eu/Acc Asset Library");
+    }
+  }).observe(document.querySelector("title"), {
+    childList: true,
+    subtree: true,
+    characterData: true
+  });
+</script>
